@@ -18,7 +18,7 @@ class Aplicacion(tk.Frame):
         self.master.config(bg="black")
         self.master.geometry("325x450")
         self.master.resizable(0, 0)
-        self.master.iconbitmap("D:/Descargas/viking.ico")
+        self.master.iconbitmap("C:/pythonProject/viking.ico")
         self.inicializar_gui()
 
     def inicializar_gui(self):
@@ -34,8 +34,6 @@ class Aplicacion(tk.Frame):
         lbl_python.config(bd=5)
         lbl_python.config(relief="groove")
         lbl_python.config(cursor="hand2")
-
-
 
         boton = Button(tab_datos, text="EXIT", command=self.salir)
         boton.config(bg="tomato")
