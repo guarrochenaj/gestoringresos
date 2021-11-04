@@ -37,10 +37,11 @@ class Aplicacion(tk.Frame):
         boton = Button(tab_datos, text="EXIT", command=self.salir)
         boton.config(bg="red")
         boton.pack(ipadx="20", ipady="30")
-        boton.pack(padx="10", pady="20")
-        boton.place(x=270, y=370)
+        boton.pack(padx="20", pady="30")
+        boton.place(x=270, y=366)
 
-
+        imagen = PhotoImage(file="")
+        Label(self.master, image=imagen, bd=0).pack()
 
         '''cuadroTexto = Entry(tab_datos)
         cuadroTexto.place(x=100, y=150)'''
@@ -61,9 +62,13 @@ class Aplicacion(tk.Frame):
         '''txt_nombre = tk.Entry(tab_ingreso)
         txt_nombre.grid(row=1, column=0)'''
 
+
+        monto = 0
+        total = "$" + str(monto)
         texto_pantalla = StringVar()
 
-        pantalla = Entry(tab_datos, textvariable=texto_pantalla, bg="grey", fg="black")
+        pantalla = Entry(tab_datos, textvariable="texto_pantalla", bg="grey", fg="black")
+        pantalla.insert(0, total)
         pantalla.place(x=100, y=100)
 
         color_boton = "grey80"
@@ -75,8 +80,6 @@ class Aplicacion(tk.Frame):
 
         texto_pantalla0 = StringVar()
         texto_pantalla1 = StringVar()
-
-        
 
         def clear0():
             global operador0
@@ -114,9 +117,10 @@ class Aplicacion(tk.Frame):
                 r = "ERROR"
             texto_pantalla1.set(r)
 
-#ingreso
         clear0()
         clear1()
+#ingreso
+
         Boton0 = Button(tab_ingreso, text="0", bg=color_boton, width=ancho_boton,
                         height=alto_boton, command=lambda: click0(0)).grid(row=5, column=0, pady=10)
         Boton1 = Button(tab_ingreso, text="1", bg=color_boton, width=ancho_boton,
@@ -143,7 +147,7 @@ class Aplicacion(tk.Frame):
                             height=alto_boton, command=lambda: click("-")).grid(row=6, column=1, pady=10)'''
         BotonClear = Button(tab_ingreso, text="Clear", bg=color_boton, width=5,
                             height=1, command=clear0).grid(row=1, column=0, pady=10)
-        BotonIgual = Button(tab_ingreso, text="=", bg=color_boton, width=ancho_boton,
+        BotonIgual = Button(tab_ingreso, text="Enter", bg=color_boton, width=ancho_boton,
                             height=alto_boton, command=resultado0).grid(row=5, column=2, pady=10)
 
         Pantalla = Entry(tab_ingreso, font=("arial", 20, "bold"), width=20,
