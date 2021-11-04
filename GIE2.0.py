@@ -3,7 +3,7 @@ from tkinter import *
 from tkinter.ttk import Progressbar
 from tkinter import ttk
 from tkinter import messagebox
-import parser
+'''import parser'''
 
 
 class Aplicacion(tk.Frame):
@@ -190,7 +190,7 @@ class Aplicacion(tk.Frame):
                             height=alto_boton, command=lambda: click1("-")).grid(row=6, column=1, pady=10)'''
         BotonClear = Button(tab_egreso, text="Clear", bg=color_boton, width=5,
                             height=1, command=clear1).grid(row=1, column=0, pady=10)
-        BotonIgual = Button(tab_egreso, text="=", bg=color_boton, width=ancho_boton,
+        BotonIgual = Button(tab_egreso, text="Enter", bg=color_boton, width=ancho_boton,
                             height=alto_boton, command=resultado1).grid(row=5, column=2, pady=10)
 
         Pantalla = Entry(tab_egreso, font=("arial", 20, "bold"), width=20,
