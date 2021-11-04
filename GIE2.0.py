@@ -41,8 +41,8 @@ class Aplicacion(tk.Frame):
         boton.pack(padx="20", pady="30")
         boton.place(x=270, y=366)
 
-        '''imagen = PhotoImage(file="D:/caratula/c94e011def3a342e9d481a286f41ef91.png_wh860.png")
-        Label(tab_datos, image=imagen, bd=0).pack()'''
+        imagen = PhotoImage(file="C:/pythonProject/c94e011def3a342e9d481a286f41ef91.png_wh860.png")
+        Label(tab_datos, image=imagen, bd=0).pack()
 
         style = ttk.Style()
         style.theme_use("clam")
