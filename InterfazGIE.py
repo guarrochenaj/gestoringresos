@@ -19,7 +19,7 @@ class Aplicacion():
 
      miFrame = Frame()
      miFrame.pack()
-     miFrame.config(bg="grey")
+     '''miFrame.config(bg="grey")'''
      miFrame.config(width="200", height="300")
      miFrame.pack(ipadx="20", ipady="30")
      miFrame.pack(padx="10", pady="20")
@@ -32,6 +32,8 @@ class Aplicacion():
      reset_pantalla=False
      resultado=0
 
+     imagen = PhotoImage(file="D:/caratula/c94e011def3a342e9d481a286f41ef91.png_wh860.png")
+     Label(self.raiz, image=imagen, bd=0).pack()
 
      numeroPantalla=StringVar()
 

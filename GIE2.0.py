@@ -3,6 +3,7 @@ from tkinter import *
 from tkinter.ttk import Progressbar
 from tkinter import ttk
 from tkinter import messagebox
+import parser
 
 
 class Aplicacion(tk.Frame):
@@ -14,7 +15,7 @@ class Aplicacion(tk.Frame):
         self.master = master
         self.pack()
         self.master.title("Gestor de Ingresos y Egresos")
-        self.master.config(bg="white")
+        self.master.config(bg="black")
         self.master.geometry("325x450")
         self.master.resizable(0, 0)
         self.master.iconbitmap("D:/Descargas/viking.ico")
@@ -26,7 +27,7 @@ class Aplicacion(tk.Frame):
         contenedor.add(tab_datos, text='Informacion')
         lbl_python = tk.Label(tab_datos)
         lbl_python.pack()
-        lbl_python.config(bg="grey")
+        lbl_python.config(bg="teal")
         lbl_python.config(width="200", height="300")
         lbl_python.pack(ipadx="20", ipady="30")
         lbl_python.pack(padx="10", pady="20")
@@ -34,17 +35,16 @@ class Aplicacion(tk.Frame):
         lbl_python.config(relief="groove")
         lbl_python.config(cursor="hand2")
 
+
+
         boton = Button(tab_datos, text="EXIT", command=self.salir)
-        boton.config(bg="red")
+        boton.config(bg="tomato")
         boton.pack(ipadx="20", ipady="30")
         boton.pack(padx="20", pady="30")
         boton.place(x=270, y=366)
 
-        imagen = PhotoImage(file="")
-        Label(self.master, image=imagen, bd=0).pack()
-
-        '''cuadroTexto = Entry(tab_datos)
-        cuadroTexto.place(x=100, y=150)'''
+        '''imagen = PhotoImage(file="D:/caratula/c94e011def3a342e9d481a286f41ef91.png_wh860.png")
+        Label(tab_datos, image=imagen, bd=0).pack()'''
 
         style = ttk.Style()
         style.theme_use("clam")
@@ -56,18 +56,12 @@ class Aplicacion(tk.Frame):
         tab_ingreso = ttk.Frame(contenedor)
         contenedor.add(tab_ingreso, text='Ingreso')
 
-        '''lbl_ingreso = tk.Label(tab_ingreso, text='Ingreso')
-        lbl_ingreso.grid(row=0, column=0)'''
-
-        '''txt_nombre = tk.Entry(tab_ingreso)
-        txt_nombre.grid(row=1, column=0)'''
-
-
         monto = 0
         total = "$" + str(monto)
+
         texto_pantalla = StringVar()
 
-        pantalla = Entry(tab_datos, textvariable="texto_pantalla", bg="grey", fg="black")
+        pantalla = Entry(tab_datos, textvariable="texto_pantalla", bg="teal", fg="black")
         pantalla.insert(0, total)
         pantalla.place(x=100, y=100)
 
@@ -80,6 +74,13 @@ class Aplicacion(tk.Frame):
 
         texto_pantalla0 = StringVar()
         texto_pantalla1 = StringVar()
+
+        '''def suma():
+            global monto
+            monto = texto_pantalla0.get()
+            try:
+                math_expression = parser.expr(monto).compile()
+                monto = eval(math_expression)'''
 
         def clear0():
             global operador0
@@ -151,7 +152,7 @@ class Aplicacion(tk.Frame):
                             height=alto_boton, command=resultado0).grid(row=5, column=2, pady=10)
 
         Pantalla = Entry(tab_ingreso, font=("arial", 20, "bold"), width=20,
-                         borderwidth=10, background="green", textvariable=texto_pantalla0)
+                         borderwidth=10, background="forestgreen", textvariable=texto_pantalla0)
         Pantalla.grid(row=0, column=0, columnspan=3, padx=0, pady=0)
 
 #egreso
@@ -195,7 +196,7 @@ class Aplicacion(tk.Frame):
                             height=alto_boton, command=resultado1).grid(row=5, column=2, pady=10)
 
         Pantalla = Entry(tab_egreso, font=("arial", 20, "bold"), width=20,
-                         borderwidth=10, background="red", textvariable=texto_pantalla1)
+                         borderwidth=10, background="tomato", textvariable=texto_pantalla1)
         Pantalla.grid(row=0, column=0, columnspan=3, padx=0, pady=0)
 
 
