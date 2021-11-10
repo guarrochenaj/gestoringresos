@@ -4,7 +4,6 @@ from tkinter.ttk import Progressbar
 from tkinter import ttk
 from tkinter import messagebox
 
-'''import parser'''
 
 
 class Aplicacion(tk.Frame):
@@ -19,7 +18,7 @@ class Aplicacion(tk.Frame):
         self.master.config(bg="black")
         self.master.geometry("325x450")
         self.master.resizable(0, 0)
-        self.master.iconbitmap("C:/pythonProject/viking.ico")
+        self.master.iconbitmap("viking.ico")
         self.inicializar_gui()
 
     def inicializar_gui(self):
@@ -68,10 +67,10 @@ class Aplicacion(tk.Frame):
         combobox1=ttk.Combobox(tab_ingreso, width=21, textvariable=opcion, values=opciones)
         combobox1.current(0)
         combobox1.place(x=80, y=65)
-        boton1=Button(tab_ingreso, text="recuperar", command=recupera)
+        boton1=Button(tab_ingreso, text="recuperar", command=recupera, bg="grey80")
         boton1.grid(row=1, column=2, pady=10)
-        label2=Label(tab_ingreso, text="opcion seleccionada: ")
-        label2.place(x=80, y=88)
+        label2=Label(tab_ingreso, text="opcion seleccionada:")
+        '''label2.place(x=80, y=88)'''
 
         monto = 0
         total = "$" + str(monto)
