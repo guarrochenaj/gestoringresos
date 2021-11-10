@@ -18,7 +18,7 @@ class Aplicacion(tk.Frame):
         self.master.config(bg="black")
         self.master.geometry("325x450")
         self.master.resizable(0, 0)
-        self.master.iconbitmap("C:/pythonProject/viking.ico")
+        '''self.master.iconbitmap("C:/pythonProject/viking.ico")'''
         self.inicializar_gui()
 
     def inicializar_gui(self):
@@ -140,10 +140,6 @@ class Aplicacion(tk.Frame):
                         height=alto_boton, command=lambda: click0(8)).grid(row=2, column=1, pady=10)
         Boton9 = Button(tab_ingreso, text="9", bg=color_boton, width=ancho_boton,
                         height=alto_boton, command=lambda: click0(9)).grid(row=2, column=2, pady=10)
-        '''BotonSuma = Button(tab_ingreso, text="+", bg=color_boton, width=ancho_boton,
-                           height=alto_boton, command=lambda: click("+")).grid(row=6, column=0, pady=10)
-        BotonResta = Button(tab_ingreso, text="-", bg=color_boton, width=ancho_boton,
-                            height=alto_boton, command=lambda: click("-")).grid(row=6, column=1, pady=10)'''
         BotonClear = Button(tab_ingreso, text="Clear", bg=color_boton, width=5,
                             height=1, command=clear0).grid(row=1, column=0, pady=10)
         BotonIgual = Button(tab_ingreso, text="Enter", bg=color_boton, width=ancho_boton,
@@ -157,12 +153,6 @@ class Aplicacion(tk.Frame):
 
         tab_egreso = ttk.Frame(contenedor)
         contenedor.add(tab_egreso, text='Egreso')
-
-        '''lbl_egreso = tk.Label(tab_egreso, text='Egreso')
-        lbl_egreso.grid(row=0, column=0)
-
-        txt_nombre = tk.Entry(tab_egreso)
-        txt_nombre.grid(row=1, column=0)'''
 
         Boton0 = Button(tab_egreso, text="0", bg=color_boton, width=ancho_boton,
                         height=alto_boton, command=lambda: click1(0)).grid(row=5, column=0, pady=10)
@@ -184,10 +174,6 @@ class Aplicacion(tk.Frame):
                         height=alto_boton, command=lambda: click1(8)).grid(row=2, column=1, pady=10)
         Boton9 = Button(tab_egreso, text="9", bg=color_boton, width=ancho_boton,
                         height=alto_boton, command=lambda: click1(9)).grid(row=2, column=2, pady=10)
-        '''BotonSuma = Button(tab_egreso, text="+", bg=color_boton, width=ancho_boton,
-                           height=alto_boton, command=lambda: click1("+")).grid(row=6, column=0, pady=10)
-        BotonResta = Button(tab_egreso, text="-", bg=color_boton, width=ancho_boton,
-                            height=alto_boton, command=lambda: click1("-")).grid(row=6, column=1, pady=10)'''
         BotonClear = Button(tab_egreso, text="Clear", bg=color_boton, width=5,
                             height=1, command=clear1).grid(row=1, column=0, pady=10)
         BotonIgual = Button(tab_egreso, text="Enter", bg=color_boton, width=ancho_boton,
@@ -208,29 +194,7 @@ class Aplicacion(tk.Frame):
         if valor == "True":
             self.master.destroy()
 
-    '''def abrir(self):
 
-     self.dialogo=Toplevel()
-
-     Aplicacion.ventana=1
-
-     Aplicacion.posx_y += 0
-     tamypos = '300x200+'+str(Aplicacion.posx_y)+ \
-     '+'+ str(Aplicacion.posx_y)
-     self.dialogo.geometry(tamypos)
-     self.dialogo.resizable(1,1)
-
-     ident = self.dialogo.winfo_id()
-
-     titulo = str(Aplicacion.ventana) + " solicitud: " + str(ident)
-     self.dialogo.title(titulo)
-
-     boton = Button(self.dialogo, text='Cerrar', command=self.dialogo.destroy)
-     boton.pack(side=BOTTOM, padx=20, pady=20)
-     boton.config(bg="red")
-
-     self.dialogo.grab_set()
-     self.master.wait_window(self.dialogo)'''
 
 
 def main():
